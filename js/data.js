@@ -1,0 +1,17 @@
+// Product catalogue — swap this array for your backend API (see README)
+const P=[
+{id:'p1',type:'pattern',title:'Marlow Wrap Dress',price:14,level:'Intermediate',c:'#d9a38c',meta:'PDF · Sizes 32–54',d:'A fluid wrap dress with a bias-cut skirt and adjustable tie. Includes A0, A4 and US Letter files plus a 24-page illustrated guide.'},
+{id:'p2',type:'pattern',title:'Alder Linen Trousers',price:12,level:'Beginner',c:'#9fae94',meta:'PDF · Sizes 32–54',d:'High-waisted, wide-leg trousers with an elastic back and side pockets. The ideal first pair of trousers.'},
+{id:'p3',type:'pattern',title:'Ines Button Shirt',price:15,level:'Advanced',c:'#c9b79c',meta:'PDF · Sizes 32–54',d:'A classic shirt with a proper collar stand, sleeve placket and curved hem. Step-by-step photo tutorial.'},
+{id:'p4',type:'course',title:'Sewing From Zero',price:79,level:'Beginner',c:'#b4492d',meta:'12 video lessons · 6 h',d:'Thread a machine, read a pattern and finish your first garment. Lifetime access and a private student forum.'},
+{id:'p5',type:'course',title:'Fit & Alter Like a Pro',price:99,level:'Intermediate',c:'#6f7f66',meta:'18 video lessons · 8 h',d:'Full bust, sway back, narrow shoulders — learn to adjust any pattern to your body with confidence.'},
+{id:'p6',type:'course',title:'Pattern Drafting Basics',price:119,level:'Advanced',c:'#3f4e63',meta:'20 video lessons · 10 h',d:'Draft your own bodice, skirt and sleeve blocks from scratch and turn them into original designs.'},
+{id:'p7',type:'master',title:'Tailoring a Jacket',price:240,level:'Advanced',c:'#7a4b3a',meta:'Live · 4 sessions · Dec 6',d:'A small-group live masterclass with feedback on your work. Canvas, pad-stitching and hand-finished buttonholes.'},
+{id:'p8',type:'master',title:'Draping on the Stand',price:180,level:'Intermediate',c:'#a58a5c',meta:'Live · 3 sessions · Jan 17',d:'Sculpt a design directly on the mannequin, then transfer it to paper. Limited to 12 seats.'},
+{id:'p9',type:'pattern',title:'Wren Quilted Coat',price:18,level:'Intermediate',c:'#566d7a',meta:'PDF · Sizes 32–54',d:'A cosy, boxy quilted coat with raglan sleeves and in-seam pockets. Fabric requirements for 3 weights.'}];
+const TYPES={pattern:'Sewing pattern',course:'Online course',master:'Masterclass'};
+function art(p){const c=p.c;let g='';
+if(p.type==='pattern')g=`<path d="M70 60 Q110 40 150 60 L162 230 H58Z" fill="#fff" fill-opacity=".55" stroke="#231f1c" stroke-dasharray="5 4"/><path d="M190 80 Q230 70 250 100 L238 220 H196Z" fill="#fff" fill-opacity=".4" stroke="#231f1c" stroke-dasharray="5 4"/><path d="M110 100V190M110 100l-6 10M110 100l6 10M110 190l-6-10M110 190l6-10" stroke="#231f1c" fill="none"/><circle cx="224" cy="150" r="3" fill="#231f1c"/>`;
+else if(p.type==='course')g=`<rect x="50" y="60" width="220" height="150" rx="10" fill="#fff" fill-opacity=".5"/><path d="M50 120q55-40 110 0t110 0" stroke="#231f1c" stroke-dasharray="5 4" fill="none"/><circle cx="160" cy="135" r="30" fill="#231f1c"/><path d="M151 119l26 16-26 16z" fill="#f6f1e9"/>`;
+else g=`<circle cx="160" cy="135" r="85" fill="#fff" fill-opacity=".35"/><circle cx="160" cy="135" r="55" fill="none" stroke="#231f1c" stroke-dasharray="5 4"/><path d="M110 200L205 70" stroke="#231f1c" stroke-width="3"/><ellipse cx="203" cy="73" rx="3" ry="9" transform="rotate(35 203 73)" fill="#f6f1e9" stroke="#231f1c"/><path d="M110 200q-30 20-10 40" stroke="#231f1c" fill="none"/>`;
+return `<svg viewBox="0 0 320 270" role="img" aria-label="${p.title}" preserveAspectRatio="xMidYMid slice"><rect width="320" height="270" fill="${c}"/>${g}</svg>`}
